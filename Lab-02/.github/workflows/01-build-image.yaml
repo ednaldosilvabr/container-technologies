@@ -26,7 +26,7 @@ jobs:
         id: calculate-version
         uses: bitshifted/git-auto-semver@v1
 
-# https://github.com/marketplace/actions/git-automatic-semantic-versioning
+        # https://github.com/marketplace/actions/git-automatic-semantic-versioning
       - name: Use version
         run: echo "Calculated version:v${{ steps.calculate-version.outputs.version-string }}"
 
@@ -50,7 +50,7 @@ jobs:
           exit-code: '1'
           ignore-unfixed: true
           vuln-type: 'os,library'
-          severity: "CRITICAL"
+          severity: 'CRITICAL,'
 
       - name: Push image
         run: |
@@ -69,4 +69,3 @@ jobs:
             - auto-pr
           draft: false
           allow_no_diff: false
-
